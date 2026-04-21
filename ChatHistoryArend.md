@@ -236,3 +236,220 @@ i like the ideas for the figure. for fiq 8 i'd say just scrap it and for fig 9 y
                                                                                                                                                             
   Each slide has purpose, content (with exact layout, font sizes, bold/italic specs, positioning), and notes (what to say verbally). The figure specs       
   summary at the bottom gives every chart its dimensions, font sizes, and a filename for the code to target.
+
+
+## Session 3
+### Arend
+i want you to look through the summary of all the concepts we saw in class in the @"lecture content/OSCA_Quiz_Study_Guide.md" study guide. the     
+  project should mention concepts from in class if they are applicable, but they shouldn't be forced into it. so go through the                      
+  @presentation_structure.md and see whcih concepts could be integrated. for each quickly explain the concept, then say where it can be integrated,  
+  and if give it a score on how well you think this integration will be. take into account how far-fetched it is and how easy to integrate it 
+
+
+### Claude
+Here's my analysis of which course concepts could fit, with honesty about how forced each feels:                                                   
+                                                                                                                                                     
+  Strong fits (7-9/10)                                                                                                                               
+                                                                                                                                                     
+  1. Push/Pull Boundary & Uncertainty Absorption — Score: 8/10                                                                                       
+  Concept: Push processes run on forecasts; pull on actual demand. Absorbing uncertainty (like CaLNG peak-shaving) has real cost.                    
+  Where: Slide 2 (Hook) or Slide 10 (Takeaways). Grain shipping is push-driven to export terminals; when lock/weather shocks hit, shippers can't     
+  flex, so spot rates explode. Frames the 2022 spike as "uncertainty hitting a rigid push chain."                                                    
+  Easy to integrate, adds vocabulary without distorting the story.                                                                                   
+                                                                                                                                                     
+  2. Five Levers to Manage Uncertainty (Capacity, Inventory, Time, Information, Price) — Score: 8/10                                                 
+  Concept: Five ways SCs absorb variability.                                                                                                         
+  Where: Slide 10 reframe. "Rate volatility = price lever absorbing weather uncertainty. Maintenance = capacity lever for reliability." Directly     
+  supports your punchline that rates and maintenance are separate problems.                                                                          
+                                                                                                                                                     
+  3. Risk Pooling / Aggregation — Score: 7/10                                                                                                        
+  Concept: Pooled variability is less than sum of parts (σ·√n).   
+  Where: Slide 9 (Pareto). Top-4 lock investment pools reliability risk across the system. Also explains why single-lock failures (Lock 12, 360 hrs) 
+  are so damaging — no pooling when a bottleneck fails.                                                                                              
+                                                                                                                                                     
+  4. Efficiency vs. Responsiveness tradeoff — Score: 7/10                                                                                            
+  Where: Slide 10. Barge is the efficient mode (cheap, slow, rigid); rail/truck are responsive substitutes. When locks fail, shippers pay the
+  responsiveness premium.                                                                                                                            
+                                                                  
+  Medium fits (5-6/10)                                                                                                                               
+                                                                  
+  5. Forecasting — Year Fixed Effects as "Level" Decomposition — Score: 6/10                                                                         
+  Concept: Demand = Level + Trend + Seasonality + Noise.
+  Where: Slide 7 regression. The 2022 dummy is essentially a "level shift." Connects regression to Holt/Winters intuition. Slightly forced but shows 
+  course vocabulary.                                                                                                                                 
+                                                                                                                                                     
+  6. Pareto / 80-20 concentration — Score: 6/10                                                                                                      
+  Not explicitly a study-guide concept but aligns with standardization/scaling logic (focus on highest-leverage points). Already your Slide 9. Low
+  lift.                                                                                                                                              
+                                                                  
+  7. Bullwhip-adjacent: amplification of shocks upstream — Score: 5/10                                                                               
+  Where: Slide 4/5. Small physical disruption → 5x rate spike is amplification-flavored. But bullwhip isn't in your study guide verbatim, so call it
+  "demand-supply mismatch amplification."                                                                                                            
+                                                                  
+  Weak fits (2-4/10) — don't force                                                                                                                   
+                                                                  
+  - Newsvendor / Critical Fractile — 3/10. No single-period ordering decision here.                                                                  
+  - EOQ / Safety Stock — 2/10. No inventory ordering problem.
+  - Buyback / Revenue Sharing contracts — 2/10. No contracting angle.                                                                                
+  - Decision trees / Value of flexibility (D-Solar) — 4/10. Could frame budget scenarios as flexibility value, but you scrapped fig 9.               
+  - CCC / DIO / DPO — 2/10. Not a working-capital story.                                                                                             
+  - Network Design (SunOil/gravity) — 4/10. Locks ARE network nodes, but you're not relocating them.                                                 
+                                                                                                                                                     
+  Recommended integration (minimal, high-impact)                                                                                                     
+                                                                                                                                                     
+  Add one line on Slide 10 tying takeaways to course framework:                                                                                      
+                                                                  
+  ▎ "Rate volatility is managed by the price lever; reliability is managed by the capacity lever. These are two of the five levers for managing      
+  ▎ uncertainty — conflating them misallocates budget."           
+                                                                                                                                                     
+  And on Slide 2 or 7, briefly note the push/pull framing: grain moves on a forecast-driven push chain with no slack, which is why weather shocks    
+  translate into price spikes rather than volume adjustments.
+                                                                                                                                                     
+  That's enough to earn "connecting to course concepts" points without distorting your (strong) narrative.       
+
+### Arend
+so i want you to change the presentation struture markdown file to integrate points 1, 2, and 4. Point 2 and 4 both impact slide 10, so perhaps    
+  it's worth it to make an extra slide (not needed if you think it's not necessary. Make as little chagnes as possible, so only keep it isolated to  
+  those specific slides. don't forget to update the slide notes to have updated speaker notes         
+
+### Claude
+Update(presentation/presentation_structure.md)                                                                                                     
+  ⎿  Added 14 lines, removed 2 lines           
+      107    extra $1.4 million per trip. This happened during harvest season, exactly when                                                          
+      108    farmers need to move grain to export terminals."
+      109  - This slide should be on screen for ~30 seconds max. It is a hook, not analysis.                                                         
+      110 +- Course-concept framing to mention verbally: grain moves on a forecast-driven                                                            
+      111 +  **push** chain (planted months in advance, harvested on a fixed window, committed                                                       
+      112 +  to export contracts). There is no demand-side flex. When a supply shock hits, the                                                       
+      113 +  **price lever** absorbs all the uncertainty, which is exactly why rates spike                                                           
+      114 +  5x rather than volumes adjusting.                                                                                                
+      115  
+      116  ### Speaker Notes
+      117  "To put the problem in concrete terms: normally, shipping grain by barge down the
+     ...
+      119  79 dollars per ton. That is nearly five times normal. To give you a sense of scale, a
+      120  typical barge tow carries about 22,500 tons. At that peak rate, shippers were paying
+      121  roughly 1.4 million dollars extra per trip. And this happened right in the middle of
+      117 -harvest season, when farmers need to move the most grain to Gulf export terminals. So                                              
+      118 -the question becomes: what caused this, and can we prevent it?"                                                                    
+      122 +harvest season, when farmers need to move the most grain to Gulf export terminals.                                                 
+      123  
+      124 +It is worth noting why the shock shows up as a price spike rather than as a volume                                                 
+      125 +adjustment. Grain shipping is a classic push supply chain. Crops are planted months                                                
+      126 +ahead of time, harvested on a fixed seasonal window, and already committed to export                                               
+      127 +contracts. Shippers cannot simply decide to move less grain when the river gets                                                    
+      128 +expensive. So when a supply-side shock hits, the price lever absorbs all of the                                                    
+      129 +uncertainty. That is what you are looking at here. So the question becomes: what                                                   
+      130 +caused this, and can we prevent it?"                                                                                               
+      131  
+      132 +                                                                                                                                   
+      133  ---
+      134  
+      135  ## Slide 3: The System We Are Studying
+
+⏺ Now Slide 10 — weave in the five levers + efficiency/responsiveness framing without breaking the three-takeaway structure.
+                                                                                          
+⏺ Update(presentation/presentation_structure.md)                                                                                                     
+  ⎿  Added 6 lines                                                                                                                                   
+      583  offenders would meaningfully improve system reliability, even if it does not                                                              
+      584  reduce freight costs.                                                                                                                     
+      585                                                         
+      586 +**Framing box (bottom, light gray background, ~11pt italic):**                                                                            
+      587 +In course terms: rate volatility is the *price lever* absorbing weather uncertainty;                                               
+      588 +maintenance is the *capacity lever* improving reliability. Barge is the efficient                                                         
+      589 +mode in a push chain with no slack, so shocks translate into price spikes rather                                                   
+      590 +than volume adjustments. Conflating the two levers misallocates budget.                                                            
+      591 +                                                                                                                                   
+      592  **Bottom-right, small, italic:**
+      593  Data: USACE LPMS (2021 to 2023), USDA GTR barge rates and volumes (2010 to 2026)
+      594  
+
+⏺ Update(presentation/presentation_structure.md)
+  ⎿  Added 7 lines                                                                        
+      601    operational reliability investment. Mixing the two leads to misallocated budgets."
+      602  - This framing (following the data to a surprising conclusion) scores well on                                                             
+      603    rubric criteria 2 (rigor) and 4 (connecting the dots).
+      604 +- Course-concept tie-in: the five levers for managing uncertainty are capacity,                                                           
+      605 +  inventory, time, information, and price. Our finding maps cleanly onto two of                                                    
+      606 +  them. Rate volatility is the price lever doing its job (absorbing weather                                                               
+      607 +  uncertainty). Maintenance is the capacity lever. Separately, barge is the                                                        
+      608 +  efficient end of the efficiency-responsiveness spectrum; rail and truck are                                                      
+      609 +  more responsive but more expensive. During the 2022 crisis, shippers who needed                                                  
+      610 +  grain to move paid the responsiveness premium.                                                                                   
+      611  
+      612  ### Speaker Notes
+      613  "So let us bring it all together with three takeaways.
+
+⏺ Update(presentation/presentation_structure.md)
+  ⎿  Added 10 lines, removed 2 lines                                                      
+      628                           
+      629  We started this project expecting to build a cost-benefit model for lock repairs. The                                                     
+      630  data pushed us to a more honest conclusion: droughts and infrastructure are separate
+      631 -problems that need separate solutions. Rate volatility is a climate risk. Maintenance                                                     
+      632 -is a reliability investment. Mixing the two up leads to misallocated budgets. Thank you."                                          
+      631 +problems that need separate solutions.                                                                                                    
+      632                                                         
+      633 +In the language of the course, these map onto two different levers for managing                                                    
+      634 +uncertainty. Rate volatility is the price lever at work, absorbing a supply-side                                                   
+      635 +weather shock in a push chain that has no slack built in. Maintenance is the capacity                                              
+      636 +lever, improving the reliability of the efficient shipping mode. Barge is the cheap,                                               
+      637 +efficient option; rail and truck are the responsive substitutes shippers fall back on                                              
+      638 +when locks fail, and they pay the responsiveness premium for it. Rate volatility is a                                              
+      639 +climate risk. Maintenance is a reliability investment. Mixing the two up leads to                                                  
+      640 +misallocated budgets. Thank you."                                                                                                  
+      641  
+      642 +                                                                                                                                   
+      643  ---
+      644  
+      645  ## Appendix Slides (not presented, available for Q&A)
+
+⏺ Changes made, no new slide needed:
+                                                                                          
+  - Slide 2 (Hook): Added push-chain / price-lever framing to Notes and Speaker Notes explaining why the shock shows up as price rather than volume. 
+  - Slide 10 (Takeaways): Added a framing box below the three takeaways mapping findings to the price lever vs capacity lever and                    
+  efficiency/responsiveness tradeoff. Updated Notes and closing Speaker Notes to match.                                                              
+                                                                                                                                                     
+  Kept the clean 3-takeaway structure intact — the course-concept tie-in lives in a small framing box and in the spoken delivery, not as a competing 
+  fourth point.                                                   
+### Arend
+now, starting from @presentation_final.pptx i want you to incorporate the chagnes as described in the presentation structure markdown file. try not to change too much and especially not the size of the figures. 
+
+### Claude
+⏺ Bash(cd "/Users/arend/Documents/Classes/4 Operations and Supply Chain Analytics/PROJECT/sc-project/presentation" && python3 -c "                   
+      from pptx import Presentation…)                            
+  ⎿  === Slide 1 ===                                                                                                                                 
+       Shape 0: PLACEHOLDER (14), name=Title 1, has_text=True                                                                                        
+         text: What Really Drives Freight Costs | on the Mississippi?                                                                                
+     … +34 lines (ctrl+o to expand)                                                                                                                  
+                                                                                                                                                     
+⏺ Bash(cd "/Users/arend/Documents/Classes/4 Operations and Supply Chain Analytics/PROJECT/sc-project/presentation" && python3 -c "
+      from pptx import Presentation…)                                                                                                                
+  ⎿  slide w/h EMU: 12192000 6858000                                                                                                                 
+     slide w/h in: 13.333333333333334 7.5                        
+     === Slide 2 ===                                                                                                                                 
+     … +14 lines (ctrl+o to expand)                                                                                                                  
+                                                                                                                                                     
+⏺ Bash(cd "/Users/arend/Documents/Classes/4 Operations and Supply Chain Analytics/PROJECT/sc-project/presentation" && python3 -c "                   
+      from pptx import Presentation…)                                                                                                                
+  ⎿  --- slide 10 body paragraphs ---                                                                                                                
+     '1. The 2022 rate crisis was a drought story, not an infrastructure story.'                                                                     
+     'Our regression shows that year-level conditions (the low-water drought) explain the rate spike. Lock stoppages had no measurable effect on     
+     … +18 lines (ctrl+o to expand)                                                                                                                  
+                                                                  
+⏺ Bash(cd "/Users/arend/Documents/Classes/4 Operations and Supply Chain Analytics/PROJECT/sc-project/presentation" && python3 << 'PY'                
+      from pptx import Presentation…)                                                     
+  ⎿  saved                                                                                                                                           
+                                                                                                                                                     
+⏺ Bash(cd "/Users/arend/Documents/Classes/4 Operations and Supply Chain Analytics/PROJECT/sc-project/presentation" && python3 -c "
+      from pptx import Presentation…)                                                                                                                
+  ⎿  Slide 10 shapes:                                             
+       0 TextBox 1: T=0.35 H=1.00                                                                                                                    
+          Three things to take away                     
+     … +8 lines (ctrl+o to expand)                                                                                                                   
+                                                                  
+⏺ Changes applied to presentation_final.pptx:                                                                                                        
+                                                                                          
+  - Slide 2: Added push-chain / price-lever paragraph to speaker notes (no slide-body change).                                                       
+  - Slide 10: Shrank body textbox slightly (5.0" → 4.1" height) to make room; added a light-gray italic framing box below the three takeaways with   
+  the price lever / capacity lever / push-chain framing; updated speaker notes with the five-levers and efficiency-vs-responsiveness closing.        
+  No figures were resized or moved.       
